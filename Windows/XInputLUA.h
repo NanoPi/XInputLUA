@@ -48,6 +48,7 @@ namespace Windows
 		int getNumBalls(int index);
 		int getNumButtons(int index);
 		int getNumHats(int index);
+		float getAxis(int index, int axis, bool integer);
 		float getAxis(int index, int axis);
 		int getAxes(lua_State * L);
 		int getBall(lua_State * L);

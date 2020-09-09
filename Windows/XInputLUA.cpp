@@ -278,7 +278,7 @@ namespace Windows
 		return x;
 	}
 
-	float XInputLUA::getAxis(int index, int axis)
+	float XInputLUA::getAxis(int index, int axis, bool integer)
 	{
 		if( padValid[index] )
 		{
@@ -314,9 +314,14 @@ namespace Windows
 				break;
 			}
 
-			return clampval(val/max);
+			if (integer) return val;
+			return val/max;//clampval(val/max);
 		}
 		return 0.f;
+	}
+	float XInputLUA::getAxis(int index, int axis)
+	{
+		return getAxis(index, axis, false);
 	}
 
 	int XInputLUA::getAxes(lua_State * L)

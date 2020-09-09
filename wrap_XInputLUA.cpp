@@ -99,7 +99,8 @@ namespace Wrapper
 	{
 		int index = luaL_checkint(L, 1)-1;
 		int axis = luaL_checkint(L, 2)-1;
-		lua_pushnumber(L, instance->getAxis(index, axis));
+		bool integer = !lua_toboolean(L, 3)-1;
+		lua_pushnumber(L, instance->getAxis(index, axis, integer));
 		return 1;
 	}
 

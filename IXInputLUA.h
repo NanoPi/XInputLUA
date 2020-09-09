@@ -18,6 +18,7 @@ public:
 	virtual int getNumAxes(int index) = 0;
 	virtual int getNumButtons(int index) = 0;
 	virtual int getNumHats(int index) = 0;
+	virtual float getAxis(int index, int axis, bool integer) = 0;
 	virtual float getAxis(int index, int axis) = 0;
 	virtual int getAxes(lua_State * L) = 0;
 	virtual bool isDown(int index, int * buttonlist) = 0;
